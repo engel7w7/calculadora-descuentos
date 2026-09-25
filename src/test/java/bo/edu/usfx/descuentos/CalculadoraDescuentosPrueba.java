@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CalculadoraDescuentosPrueba {
+class CalculadoraDescuentosTest {
 
     private CalculadoraDescuentos calculadora;
 
@@ -40,14 +40,14 @@ class CalculadoraDescuentosPrueba {
     }
 
     @ParameterizedTest(name = "descuento {0}% es invalido")
-    @ValueSource(doubles = {-1, -0.01, 100.01, 150})
+    @ValueSource(doubles = { -1, -0.01, 100.01, 150 })
     void porcentajeFueraDeRangoLanzaExcepcion(double porcentaje) {
         assertThrows(IllegalArgumentException.class,
                 () -> calculadora.calcularPrecioFinal(100.00, porcentaje));
     }
 
     @ParameterizedTest(name = "precio {0} es invalido")
-    @ValueSource(doubles = {0, -10})
+    @ValueSource(doubles = { 0, -10 })
     void precioNoPositivoLanzaExcepcion(double precio) {
         IllegalArgumentException e = assertThrows(IllegalArgumentException.class,
                 () -> calculadora.calcularPrecioFinal(precio, 10));
