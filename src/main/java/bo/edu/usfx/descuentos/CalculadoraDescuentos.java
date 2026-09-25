@@ -40,4 +40,11 @@ public class CalculadoraDescuentos {
         }
         return precioUnitario;
     }
+
+    public static double calcularDescuentoVolumen(int unidades, double precioUnitario) {
+        if (unidades > 500) {
+            return (unidades * precioUnitario) * 0.50;
+        }
+        return unidades * precioUnitario;
+    }
 }
