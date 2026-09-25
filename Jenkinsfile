@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Pruebas') {
             steps {
-                sh 'mvn -B test -Dmaven.test.failure.ignore=true'
+                sh 'mvn -B test'
             }
         }
         stage('Empaquetar') {
