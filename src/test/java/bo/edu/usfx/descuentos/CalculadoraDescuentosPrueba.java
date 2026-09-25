@@ -62,4 +62,10 @@ class CalculadoraDescuentosTest {
         assertEquals(100.0, CalculadoraDescuentos.descuentoPorCantidad(5, 100.0));
         assertThrows(IllegalArgumentException.class, () -> CalculadoraDescuentos.descuentoPorCantidad(0, 10.0));
     }
+
+    @Test
+    void descuentoPorVolumenEmpresarial_AplicaDescuentoEspecial() {
+        double resultado = CalculadoraDescuentos.calcularDescuentoVolumen(600, 10.0);
+        assertEquals(3000.0, resultado);
+    }
 }
